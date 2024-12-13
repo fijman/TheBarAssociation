@@ -13,7 +13,7 @@ body {
 .form-container {
     align-items: center;
    background-color: #3d3d3d;
-   width: 53vw;
+   width: 1000px;
    height: 1600px;
    border-radius: 10px;
    
@@ -102,4 +102,13 @@ h3 {
    margin-top: 80px;
    font-size: 20px;
    color: rgb(255, 255, 255);
+}
+@media (max-width: 600px) {
+
+    .form-container {
+       zoom: 80% ;
+       margin-top: 20vh;
+
+    }
+
 }
