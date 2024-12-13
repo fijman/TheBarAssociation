@@ -106,9 +106,22 @@ h3 {
 @media (max-width: 600px) {
 
     .form-container {
-       zoom: 80% ;
+       zoom: 30% ;
        margin-top: 20vh;
+       height: 2500px;
 
+    }
+
+    #messageForm{
+        zoom: 190% ; 
+
+    }
+    #field9 {
+        width: 400px;
+    }
+
+    button{
+     margin-left: -130vw;
     }
 
 }
