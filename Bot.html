@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заявка на вступление в The Radical-Liberal Party</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <style href ="style.css"></style>
+    
+</head>
+<body>
+
+    <div class="form-container">
+        <img src = "Без имени-2.png" width="70%">
+        <h1>Помощь в написании <span style="color: rgb(255, 157, 29);">  
+            искового заявления</span></h1>
+            <h3>Данные</h3>
+        <form id="messageForm">
+            <input type="text" id="field1" class ="TEXT" placeholder="Имя Фамилия" required>
+            <input type="text" id="field2" class ="TEXT" placeholder="Номер Паспорта" required>
+            <input type="text" id="field3" class ="TEXT" placeholder="Ксерокопия Паспорта" required>
+            <input type="text" id="field4" class ="TEXT" placeholder="Электронная почта (Discord)" required>
+            <input type="text" id="field5" class ="TEXT" placeholder="Номер телефона" required>
+            <h2>Материалы дела</h2>
+            <input type="text" id="field6" class ="TEXT" placeholder="Инкриминированые статьи" required>
+            <input type="text" id="field7" class ="TEXT" placeholder="Видеофиксациия" required>
+            <input type="text" id="field8" class ="TEXT" placeholder="Была ли сделана запись о судимости?" required>
+            <textarea type="text" id="field9" class ="TEXT" placeholder="Подробное описание ситуации"required></textarea>
+            <h2>Оплата услуг производится на счет - 73879. </h2>
+            <input type="text" id="field10" class ="TEXT" placeholder="Скриншот оплаты услуг" required>
+        <button type="submit">Отправить</button>
+        </form>
+
+        
+    </div>
+
+    <script>
+        document.getElementById('messageForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Предотвращаем перезагрузку страницы
+
+            const field1 = document.getElementById('field1').value;
+            const field2 = document.getElementById('field2').value;
+            const field3 = document.getElementById('field3').value;
+            const field4 = document.getElementById('field4').value;
+            const field5 = document.getElementById('field5').value;
+            const field6 = document.getElementById('field6').value;
+            const field7 = document.getElementById('field7').value;
+            const field8 = document.getElementById('field8').value;
+            const field9 = document.getElementById('field9').value;
+            const field10 = document.getElementById('field10').value;
+
+            const webhookURL = 'https://discord.com/api/webhooks/1317217225693991054/dIXeS4vhyKyFiFUmH4GqoIrdCJ920VId4BMxHYeS5RarXF7cyssk-lt-wCi-cBi9Ja94'; // Замените на ваш URL вебхука
+
+            // Формируем поля для отправки
+            const fields = [
+                { name: "Имя Фамилия", value: field1, inline: false },
+                { name: "Номер Паспорта", value: field2, inline: false },
+                { name: "Ксерокопия Паспорта", value: field3, inline: false },
+                { name: "Электронная почта (Discord)", value: field4, inline: false },
+                { name: "Инкриминированые статьи", value: field6, inline: false },
+                { name: "Видеофиксациия", value: field7, inline: false },
+                { name: "Была ли сделана запись о судимости?", value: field8, inline: false },
+                { name: "Подробное описание ситуации", value: field9, inline: false },
+                { name: "Скриншот оплаты услуг", value: field10, inline: false }
+            ];
+
+            // Получаем текущее время
+           
+            const TIME = new Date().toISOString();
+        
+
+            // Формируем данные для отправки
+            const payload = {
+                username: "Секретарь партии",
+                    avatar_url: "https://cdn.discordapp.com/attachments/1303450766236979252/1305860322619555840/statue-of-liberty.png?ex=673490b2&is=67333f32&hm=a340052df2c40f5522f36cbcf4f2bf8541b9f365edae51817ee37a0cd28819aa&",
+                content: "<@&1297958792461291580> <@&1297959292745547900>",
+                embeds: [{
+                    
+                    title: "Заявление на вступление в партию",
+                    color: 0x00FF00, // Цвет в десятичном формате
+                    fields: fields,
+                    timestamp: TIME,
+                    footer: {
+                        text: "by Walter Heisenberg"
+                    },
+                    thumbnail: {
+                                 url:"https://cdn.discordapp.com/attachments/1303450766236979252/1303454138801324134/undefined_-_Imgur_5.png?ex=67346183&is=67331003&hm=12d56d68b6a8994a5b067f0f51c6c916426dbda867e88a5feec008ec7e9c4670&"
+                    },  
+                    image: {
+                                url: "https://cdn.discordapp.com/attachments/1301258252427989133/1301266881419804762/55f758f4c4b08c0e.png?ex=67345578&is=673303f8&hm=b6313ab9ddcec547deb5e36dc63d7c168d9b9a4e7b2c3161a849852c5a394ad4&"
+                    },
+                    
+                    
+                }]
+            };
+
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(payload),
+            })
+            .then(response => {
+                if (response.ok) {
+                   
+                    
+                    document.getElementById('messageForm').reset(); // Очищаем поля ввода
+                } else {
+                    alert('Ошибка при отправке сообщения.');
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                alert('Ошибка при отправке сообщения.');
+            });
+        });
+    </script>
+
+</body>
+</html>
