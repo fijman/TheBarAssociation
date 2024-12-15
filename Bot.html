@@ -16,19 +16,21 @@
             искового заявления</span></h1>
             
         <form id="messageForm">
-            <h3>Данные</h3>
-            <input type="text" id="field1" class ="TEXT" placeholder="Имя Фамилия" required>
+            <h3>Ваши данные</h3>
+            <input type="text" id="field1" class ="TEXT" placeholder="Имя Фамилия" required> 
             <input type="text" id="field2" class ="TEXT" placeholder="Номер Паспорта" required>
             <input type="text" id="field3" class ="TEXT" placeholder="Ксерокопия Паспорта" required>
             <input type="text" id="field4" class ="TEXT" placeholder="Электронная почта (Discord)" required>
-            <input type="text" id="field5" class ="TEXT" placeholder="Номер телефона" required>
+            <input type="text" id="field5" class ="TEXT" placeholder="Номер телефона" required> 
+            <h2>Данные ответчика</h2>
+            <input type="text" id="field1" class ="TEXT" placeholder="Имя Фамилия" required> 
+            <input type="text" id="field2" class ="TEXT" placeholder="Номер Паспорта" required>
+            <input type="text" id="field2" class ="TEXT" placeholder="Организация" required>
             <h2>Материалы дела</h2>
             <input type="text" id="field6" class ="TEXT" placeholder="Инкриминированые статьи" required>
             <input type="text" id="field7" class ="TEXT" placeholder="Видеофиксациия" required>
             <input type="text" id="field8" class ="TEXT" placeholder="Была ли сделана запись о судимости?" required>
-            <textarea type="text" id="field9" class ="TEXT" placeholder="Подробное описание ситуации"required></textarea>
-            <h2>Оплата услуг производится на счет - 73879. </h2>
-            <input type="text" id="field10" class ="TEXT" placeholder="Скриншот оплаты услуг" required>
+            <textarea type="text" id="field9" class ="TEXT" placeholder="Краткое описание ситуации"required></textarea>
         <button type="submit">Отправить</button>
         </form>
 
@@ -106,7 +108,7 @@
                 if (response.ok) {
                    
                     
-                    document.getElementById('messageForm').reset(); // Очищаем поля ввода
+                    
                 } else {
                     alert('Ошибка при отправке сообщения.');
                 }
