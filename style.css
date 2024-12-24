@@ -4,32 +4,46 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
     margin: 0;
+    background-image: url('Без имени-1.png') ;
+    background-size: 100vw 115vh ;   
 }
+
 *{
     margin: 0 0 0 0;
 }
-.form-container {
-    align-items: center;
-   background-color: #3d3d3d;
-   width: 1000px;
-   height: 100%;
-   border-radius: 10px;
-   
-   
-  
- 
-   
 
+::-webkit-scrollbar {
+    display: none;
 }
+
+.form-container {
+   
+   align-items: center;
+   background-color: #383838;
+   width: 550px;
+   height: 100vh;
+   position: absolute;
+   right: 0;
+   top: 0;
+   z-index: 10;
+ 
+} 
+   
+.hidden {
+    display: none;
+}
+.visible {
+    display: block;
+}
+
 .TEXT {
     
     width: 400px ;
     height: 30px;
     align-items: center;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 75px;
+    
     margin-top: 20px;
     border: 3px  #ff0000;
     border-radius: 10px;
@@ -37,32 +51,48 @@ body {
     color: #ffffff;
     background-color: #1a1a1a;
     padding-left: 10px;
-    resize: none;
-
-   
-   
+    resize: none;   
 }
 
-#field9{
-    margin-left: 50px;
-    width: 900px ;
-    height: 250px;  
+#img1{
+zoom: 40%;
+position: fixed;
+margin-top: 300vh;
+margin-left: 0;
+z-index: 5;
+}
+
+h4{
+    position: absolute;
+    margin-top: 50vh;
+    font-size: 40px;
+   color: rgb(255, 255, 255); 
+}
+#field12{
+    margin-left: 75px;
+    width: 400px ;
+    height: 200px;  
+}
+
+#field1{
+    margin-top: 30px;
+   
 }
 
  ::placeholder{
         color: #6e6e6e;
     }
 
+
 button {
 
     font-size: 20px;
     align-items: center;
-    margin-right: 100px;
-    margin-left: 30%;
-    margin-top: 100px;
-    margin-bottom: 70px;
-    width: 400px;
-    height: 80px;
+    margin-left: 125px;
+    margin-left: 125px;
+    margin-top: 60px;
+    width: 300px;
+    height: 60px;
     background-color: #ffb342;
     color: white;
     border: none;
@@ -73,57 +103,22 @@ button {
 button:hover {
     background-color: #f0a93e;
 }
-img{
 
-    margin-top: 15px;
-    margin-left: 35%;
-    margin-right: auto;
-    align-items: center;
-    width: 30%;
-    
-}
+
 h1 {
-    margin-top: 100px;
+    
+    margin-top: 50px;
     margin-left: 80px;
     align-items: center;
     font-size: 40px;
-   color: rgb(255, 255, 255);
-}
-
-h2 {
-    align-items: center;
-    margin-left: 150px;
-   margin-top: 40px;
-   font-size: 20px;
-   color: rgb(255, 255, 255);
+   color: rgb(255, 255, 255); 
 }
 
 h3 {
-    align-items: center;
-    margin-left: 160px;
-   margin-top: 100px;
+    width: 200px;
+   align-items: center;
+   margin-left: 200px;
    font-size: 20px;
    color: rgb(255, 255, 255);
-}
-@media (max-width: 600px) {
-
-    .form-container {
-       zoom: 30% ;
-       margin-top: 20vh;
-       height: 2500px;
-
-    }
-
-    #messageForm{
-        zoom: 190% ; 
-
-    }
-    #field9 {
-        width: 400px;
-    }
-
-    button{
-     margin-left: -130vw;
-    }
-
+   margin-top: 200px;
 }
