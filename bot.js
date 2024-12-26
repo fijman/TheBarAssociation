@@ -1,3 +1,293 @@
+var num = 0;
+const button = document.getElementById('Button2');
+const button2 = document.getElementById('Button1');
+const elemen1 = document.getElementById('img2');
+const elemen2 = document.getElementById('img3');
+const elemen3 = document.getElementById('img4');
+const elemen4 = document.getElementById('img5');
+const elemen5 = document.getElementById('img6');
+const elemen6 = document.getElementById('img7');
+const elemen7 = document.getElementById('img8');
+
+
+
+button.addEventListener('click', function() {
+
+    if (num<6){
+      num++;
+    }
+    else{
+        num = 0;
+    }
+if (num==0) {
+       elemen2.classList.remove('visible');
+       elemen2.classList.add('hidden');       
+       elemen3.classList.remove('visible');
+       elemen3.classList.add('hidden'); 
+       elemen4.classList.remove('visible');
+       elemen4.classList.add('hidden');       
+       elemen5.classList.remove('visible');
+       elemen5.classList.add('hidden'); 
+       elemen6.classList.remove('visible');
+       elemen6.classList.add('hidden'); 
+       elemen7.classList.remove('visible');
+       elemen7.classList.add('hidden'); 
+
+        elemen1.classList.remove('hidden');
+        elemen1.classList.add('visible');
+        
+        }
+if (num==1){
+        elemen1.classList.remove('visible');
+        elemen1.classList.add('hidden');
+        elemen3.classList.remove('visible');
+        elemen3.classList.add('hidden'); 
+        elemen4.classList.remove('visible');
+        elemen4.classList.add('hidden');       
+        elemen5.classList.remove('visible');
+        elemen5.classList.add('hidden'); 
+        elemen6.classList.remove('visible');
+        elemen6.classList.add('hidden'); 
+        elemen7.classList.remove('visible');
+        elemen7.classList.add('hidden'); 
+
+        elemen2.classList.remove('hidden');
+        elemen2.classList.add('visible');
+        
+    }
+if(num==2){
+        elemen1.classList.remove('visible');
+        elemen1.classList.add('hidden');
+        elemen2.classList.remove('visible');
+        elemen2.classList.add('hidden'); 
+        elemen4.classList.remove('visible');
+        elemen4.classList.add('hidden');       
+        elemen5.classList.remove('visible');
+        elemen5.classList.add('hidden'); 
+        elemen6.classList.remove('visible');
+        elemen6.classList.add('hidden'); 
+        elemen7.classList.remove('visible');
+        elemen7.classList.add('hidden'); 
+
+        elemen3.classList.remove('hidden');
+        elemen3.classList.add('visible');       
+        
+    }  
+if(num==3){
+        elemen1.classList.remove('visible');
+        elemen1.classList.add('hidden');
+        elemen2.classList.remove('visible');
+        elemen2.classList.add('hidden'); 
+        elemen3.classList.remove('visible');
+        elemen3.classList.add('hidden'); 
+        elemen5.classList.remove('visible');
+        elemen5.classList.add('hidden'); 
+        elemen6.classList.remove('visible');
+        elemen6.classList.add('hidden'); 
+        elemen7.classList.remove('visible');
+        elemen7.classList.add('hidden'); 
+
+        elemen4.classList.remove('hidden');
+        elemen4.classList.add('visible');       
+        
+    } 
+if(num==4){
+        elemen1.classList.remove('visible');
+        elemen1.classList.add('hidden');
+        elemen2.classList.remove('visible');
+        elemen2.classList.add('hidden');       
+        elemen3.classList.remove('visible');
+        elemen3.classList.add('hidden'); 
+        elemen4.classList.remove('visible');
+        elemen4.classList.add('hidden');       
+        elemen6.classList.remove('visible');
+        elemen6.classList.add('hidden'); 
+        elemen7.classList.remove('visible');
+        elemen7.classList.add('hidden'); 
+
+        elemen5.classList.remove('hidden');
+        elemen5.classList.add('visible');       
+        
+    } 
+if(num==5){
+    elemen1.classList.remove('visible');
+    elemen1.classList.add('hidden');
+    elemen2.classList.remove('visible');
+    elemen2.classList.add('hidden');       
+    elemen3.classList.remove('visible');
+    elemen3.classList.add('hidden'); 
+    elemen4.classList.remove('visible');
+    elemen4.classList.add('hidden');       
+    elemen5.classList.remove('visible');
+    elemen5.classList.add('hidden'); 
+    elemen7.classList.remove('visible');
+    elemen7.classList.add('hidden'); 
+
+        elemen6.classList.remove('hidden');
+        elemen6.classList.add('visible');       
+        
+    } 
+if(num==6){
+    elemen1.classList.remove('visible');
+    elemen1.classList.add('hidden');
+    elemen2.classList.remove('visible');
+    elemen2.classList.add('hidden');       
+    elemen3.classList.remove('visible');
+    elemen3.classList.add('hidden'); 
+    elemen4.classList.remove('visible');
+    elemen4.classList.add('hidden');       
+    elemen5.classList.remove('visible');
+    elemen5.classList.add('hidden'); 
+    elemen7.classList.remove('visible');
+    elemen7.classList.add('hidden'); 
+    elemen6.classList.remove('visible');
+    elemen6.classList.add('hidden'); 
+
+        elemen7.classList.remove('hidden');
+        elemen7.classList.add('visible');       
+        
+    }   
+});
+
+button2.addEventListener('click', function() {
+
+    if (num>0){
+      num--;
+    }
+    else{
+        num = 6;
+    }
+if (num==0) {
+       elemen2.classList.remove('visible');
+       elemen2.classList.add('hidden');       
+       elemen3.classList.remove('visible');
+       elemen3.classList.add('hidden'); 
+       elemen4.classList.remove('visible');
+       elemen4.classList.add('hidden');       
+       elemen5.classList.remove('visible');
+       elemen5.classList.add('hidden'); 
+       elemen6.classList.remove('visible');
+       elemen6.classList.add('hidden'); 
+       elemen7.classList.remove('visible');
+       elemen7.classList.add('hidden'); 
+
+        elemen1.classList.remove('hidden');
+        elemen1.classList.add('visible');
+        
+        }
+if (num==1){
+        elemen1.classList.remove('visible');
+        elemen1.classList.add('hidden');
+        elemen3.classList.remove('visible');
+        elemen3.classList.add('hidden'); 
+        elemen4.classList.remove('visible');
+        elemen4.classList.add('hidden');       
+        elemen5.classList.remove('visible');
+        elemen5.classList.add('hidden'); 
+        elemen6.classList.remove('visible');
+        elemen6.classList.add('hidden'); 
+        elemen7.classList.remove('visible');
+        elemen7.classList.add('hidden'); 
+
+        elemen2.classList.remove('hidden');
+        elemen2.classList.add('visible');
+        
+    }
+if(num==2){
+        elemen1.classList.remove('visible');
+        elemen1.classList.add('hidden');
+        elemen2.classList.remove('visible');
+        elemen2.classList.add('hidden'); 
+        elemen4.classList.remove('visible');
+        elemen4.classList.add('hidden');       
+        elemen5.classList.remove('visible');
+        elemen5.classList.add('hidden'); 
+        elemen6.classList.remove('visible');
+        elemen6.classList.add('hidden'); 
+        elemen7.classList.remove('visible');
+        elemen7.classList.add('hidden'); 
+
+        elemen3.classList.remove('hidden');
+        elemen3.classList.add('visible');       
+        
+    }  
+if(num==3){
+        elemen1.classList.remove('visible');
+        elemen1.classList.add('hidden');
+        elemen2.classList.remove('visible');
+        elemen2.classList.add('hidden'); 
+        elemen3.classList.remove('visible');
+        elemen3.classList.add('hidden'); 
+        elemen5.classList.remove('visible');
+        elemen5.classList.add('hidden'); 
+        elemen6.classList.remove('visible');
+        elemen6.classList.add('hidden'); 
+        elemen7.classList.remove('visible');
+        elemen7.classList.add('hidden'); 
+
+        elemen4.classList.remove('hidden');
+        elemen4.classList.add('visible');       
+        
+    } 
+if(num==4){
+        elemen1.classList.remove('visible');
+        elemen1.classList.add('hidden');
+        elemen2.classList.remove('visible');
+        elemen2.classList.add('hidden');       
+        elemen3.classList.remove('visible');
+        elemen3.classList.add('hidden'); 
+        elemen4.classList.remove('visible');
+        elemen4.classList.add('hidden');       
+        elemen6.classList.remove('visible');
+        elemen6.classList.add('hidden'); 
+        elemen7.classList.remove('visible');
+        elemen7.classList.add('hidden'); 
+
+        elemen5.classList.remove('hidden');
+        elemen5.classList.add('visible');       
+        
+    } 
+if(num==5){
+    elemen1.classList.remove('visible');
+    elemen1.classList.add('hidden');
+    elemen2.classList.remove('visible');
+    elemen2.classList.add('hidden');       
+    elemen3.classList.remove('visible');
+    elemen3.classList.add('hidden'); 
+    elemen4.classList.remove('visible');
+    elemen4.classList.add('hidden');       
+    elemen5.classList.remove('visible');
+    elemen5.classList.add('hidden'); 
+    elemen7.classList.remove('visible');
+    elemen7.classList.add('hidden'); 
+
+        elemen6.classList.remove('hidden');
+        elemen6.classList.add('visible');       
+        
+    } 
+if(num==6){
+    elemen1.classList.remove('visible');
+    elemen1.classList.add('hidden');
+    elemen2.classList.remove('visible');
+    elemen2.classList.add('hidden');       
+    elemen3.classList.remove('visible');
+    elemen3.classList.add('hidden'); 
+    elemen4.classList.remove('visible');
+    elemen4.classList.add('hidden');       
+    elemen5.classList.remove('visible');
+    elemen5.classList.add('hidden'); 
+    elemen7.classList.remove('visible');
+    elemen7.classList.add('hidden'); 
+    elemen6.classList.remove('visible');
+    elemen6.classList.add('hidden'); 
+
+        elemen7.classList.remove('hidden');
+        elemen7.classList.add('visible');       
+        
+    }   
+});
+
+
 document.getElementById('But1').addEventListener('click', function() {
     const element1 = document.getElementById('element1');
     const element2 = document.getElementById('element2');
@@ -38,6 +328,26 @@ document.getElementById('But2').addEventListener('click', function() {
     }
 });
 
+document.getElementById('But3').addEventListener('click', function() {
+    const element1 = document.getElementById('element3');
+    const element2 = document.getElementById('element4');
+
+    // Проверяем текущее состояние видимости и переключаем
+    if (element1.classList.contains('visible')) {
+        element1.classList.remove('visible');
+        element1.classList.add('hidden');
+        
+        element2.classList.remove('hidden');
+        element2.classList.add('visible');
+    } else {
+        element1.classList.remove('hidden');
+        element1.classList.add('visible');
+        
+        element2.classList.remove('visible');
+        element2.classList.add('hidden');
+    }
+});
+
 document.getElementById('messageForm').addEventListener('submit', function(event) {
 event.preventDefault(); // Предотвращаем перезагрузку страницы
 
@@ -53,8 +363,10 @@ event.preventDefault(); // Предотвращаем перезагрузку �
        const field10 = document.getElementById('field10').value;
        const field11 = document.getElementById('field11').value;
        const field12 = document.getElementById('field12').value;
+       const field13 = document.getElementById('field13').value;
+       const field14 = document.getElementById('field14').value;
 
-       const webhookURL = 'https://discord.com/api/webhooks/1321126869541715989/92bJA5x3u0ToZN7myPrutnGfCjH6jP1bDBWfuRWUmCzFyckLdzImxM_f15KdHW1bR66E'; // Замените на ваш URL вебхука
+       const webhookURL = 'https://discord.com/api/webhooks/1317217225693991054/dIXeS4vhyKyFiFUmH4GqoIrdCJ920VId4BMxHYeS5RarXF7cyssk-lt-wCi-cBi9Ja94'; // Замените на ваш URL вебхука
 
             // Формируем поля для отправки
       const fields = [
@@ -69,7 +381,10 @@ event.preventDefault(); // Предотвращаем перезагрузку �
         { name: "Инкриминированые статьи", value: field9, inline: false },
         { name: "Видеофиксациия", value: field10, inline: false },
         { name: "Была ли сделана запись о судимости?", value: field11, inline: false },
-        { name: "Краткое описание ситуации", value: field12, inline: false }
+        { name: "Краткое описание ситуации", value: field12, inline: false },
+        { name: "Скриншот оплаты услуг", value: field13, inline: false },
+        { name: "Скриншот оплаты пошлины", value: field14, inline: false }
+
         ];
 
             // Получаем текущее время
@@ -81,7 +396,7 @@ event.preventDefault(); // Предотвращаем перезагрузку �
             const payload = {
                 username: "Секретарь партии",
                     avatar_url: "https://discord.com/api/webhooks/1317217225693991054/dIXeS4vhyKyFiFUmH4GqoIrdCJ920VId4BMxHYeS5RarXF7cyssk-lt-wCi-cBi9Ja94",
-                content: "<@&1297958792461291580> <@&1297959292745547900>",
+                content: "<@&1321467897834639411>",
                 embeds: [{
                     
                     title: "Заявление на вступление в партию",
@@ -111,7 +426,7 @@ event.preventDefault(); // Предотвращаем перезагрузку �
             })
             .then(response => {
                 if (response.ok) {
-                    alert(fields);
+                    alert('Заявка успешно отправлена!');
                     
                     
                 } else {

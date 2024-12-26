@@ -20,7 +20,7 @@ body {
 .form-container {
    
    align-items: center;
-   background-color: #383838;
+   background-color: #2c2c2c;
    width: 550px;
    height: 100vh;
    position: absolute;
@@ -55,16 +55,55 @@ body {
 }
 
 #img1{
-zoom: 40%;
-position: fixed;
-margin-top: 300vh;
-margin-left: 0;
+zoom: 20%;
+position: absolute;
+margin-left: 200px;
 z-index: 5;
 }
 
-h4{
+
+#img2{position:absolute;zoom:20%;margin-left: 500px;z-index: 5;}     
+#img3{position:absolute;zoom:20%;margin-left: 500px;z-index:5;}      
+#img4{position: absolute;zoom: 20%;margin-left:500px;z-index: 5;}
+#img5{position:absolute;zoom:20%;margin-left: 500px;z-index: 5;}     
+#img6{position:absolute;zoom:20%;margin-left: 500px;z-index:5;}      
+#img7{position: absolute;zoom: 20%;margin-left:500px;z-index: 5;}  
+#img8{position: absolute;zoom: 20%;margin-left:500px;z-index: 5;}  
+   
+    
+
+#box{
+width: 100%;
+height: 75px;
+background-color: #1a1a1ad5;
+z-index: 11;
+}
+pre {
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 5px;
+        margin-left:1600px;
+        font-size: 15px;
+        color: rgb(179, 179, 179);
+        
+        z-index: 12;
+        position: absolute;
+    
+ }
+
+#ListBox{
+    background-color: #ff000000;
+    height:650px;
+    width:800px;
     position: absolute;
-    margin-top: 50vh;
+    margin-top: 110vh;
+    margin-left: 0;
+    z-index: 4;
+    }
+
+h4{
+    margin-left: -7vw;
+    position: absolute;
+    margin-top: 30vh;
     font-size: 40px;
    color: rgb(255, 255, 255); 
 }
@@ -84,7 +123,7 @@ h4{
     }
 
 
-button {
+.button {
 
     font-size: 20px;
     align-items: center;
@@ -100,25 +139,76 @@ button {
     cursor: pointer;
     font-weight: bolder;
 }
+
 button:hover {
     background-color: #f0a93e;
 }
 
+#Button1 {
+    margin-top: 110vh;
+   position: absolute;
+    font-size: 20px;
+    align-items: center;
+    margin-left: -650px;
+    width: 40px;
+    height: 40px;
+    background-color: #ffb34200;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bolder;
+    z-index: 9;
+}
+
+
+#Button2 {
+    margin-top: 110vh;
+    position: absolute;
+    font-size: 20px;
+    margin-left: 370px;
+    width: 40px;
+    height: 40px;
+    background-color: #ffb34200;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bolder;
+    z-index: 9;
+}
 
 h1 {
+    position: absolute;
+    margin-top: 5px;
+    margin-left: -300px;
     
-    margin-top: 50px;
-    margin-left: 80px;
-    align-items: center;
     font-size: 40px;
-   color: rgb(255, 255, 255); 
+   color: rgb(255, 162, 56); 
+   z-index: 12;
 }
 
 h3 {
-    width: 200px;
+    
    align-items: center;
    margin-left: 200px;
    font-size: 20px;
    color: rgb(255, 255, 255);
-   margin-top: 200px;
+   margin-top: 300px;
+}
+h5 {
+    width: 410px;
+    align-items: center;
+    margin-left: 75px;
+    font-size: 16px;
+    color: rgb(240, 240, 240);
+    margin-top: 30px;
+    font-weight: lighter;
+}
+
+
+
+ #b1{
+
+ margin-top: 300px;
 }
