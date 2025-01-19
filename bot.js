@@ -80,7 +80,7 @@ event.preventDefault(); // Предотвращаем перезагрузку �
        const field13 = document.getElementById('field13').value;
        const field14 = document.getElementById('field14').value;
 
-       const webhookURL = 'https://discord.com/api/webhooks/1330635021458997310/EcbATN8IkNrW75xArNbhoo09eG39n9Q4M7Kh8FrzsFoHleyg3AmuXwhts5SVNnqJFkMB'; // Замените на ваш URL вебхука
+       const webhookURL = 'https://discord.com/api/webhooks/1330638239391813825/pPLjWkUZZ-ORmNAEsuAKX3b0uvglA4uHx_og9QbKbf61Cl66Y0Uf1KOC6d71uoChuYRa'; // Замените на ваш URL вебхука
 
             // Формируем поля для отправки
       const fields = [
