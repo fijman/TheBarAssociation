@@ -80,7 +80,7 @@ event.preventDefault(); // Предотвращаем перезагрузку �
        const field13 = document.getElementById('field13').value;
        const field14 = document.getElementById('field14').value;
 
-       const webhookURL = 'https://discordapp.com/api/webhooks/1317217225693991054/dIXeS4vhyKyFiFUmH4GqoIrdCJ920VId4BMxHYeS5RarXF7cyssk-lt-wCi-cBi9Ja94'; // Замените на ваш URL вебхука
+       const webhookURL = 'https://discord.com/api/webhooks/1330635021458997310/EcbATN8IkNrW75xArNbhoo09eG39n9Q4M7Kh8FrzsFoHleyg3AmuXwhts5SVNnqJFkMB'; // Замените на ваш URL вебхука
 
             // Формируем поля для отправки
       const fields = [
@@ -109,7 +109,8 @@ event.preventDefault(); // Предотвращаем перезагрузку �
             // Формируем данные для отправки
             const payload = {
                 username: "Секретарь партии",
-                    avatar_url: "https://discord.com/api/webhooks/1317217225693991054/dIXeS4vhyKyFiFUmH4GqoIrdCJ920VId4BMxHYeS5RarXF7cyssk-lt-wCi-cBi9Ja94",
+                avatar_url: "https://cdn.discordapp.com/attachments/1302639052008456258/1330636354131988501/statue-of-liberty.png?ex=678eb32c&is=678d61ac&hm=e33899f9176b7651f8af09a57d4268f5230d515b371daad2d3329ff9223cd483&",
+                             
                 content: "<@&1321467897834639411>",
                 embeds: [{
                     
@@ -127,8 +128,9 @@ event.preventDefault(); // Предотвращаем перезагрузку �
                                 url: "https://cdn.discordapp.com/attachments/1301258252427989133/1301266881419804762/55f758f4c4b08c0e.png?ex=67345578&is=673303f8&hm=b6313ab9ddcec547deb5e36dc63d7c168d9b9a4e7b2c3161a849852c5a394ad4&"
                     },
                     
-                    
-                }]
+                     
+                }],
+               
             };
 
             fetch(webhookURL, {
