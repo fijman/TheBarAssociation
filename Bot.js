@@ -1,72 +1,227 @@
-document.getElementById('messageForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Предотвращаем перезагрузку страницы
+const canvas = document.getElementById('canvas');
+const canvas2 = document.getElementById('canvas2');
+const ctx = canvas.getContext('2d');
+const ctx2 = canvas2.getContext('2d');
 
-    const field1 = document.getElementById('field1').value;
-    const field2 = document.getElementById('field2').value;
-    const field3 = document.getElementById('field3').value;
-    const field4 = document.getElementById('field4').value;
-    const field5 = document.getElementById('field5').value;
-    const field6 = document.getElementById('field6').value;
-    const webhookURL = 'https://discord.com/api/webhooks/1326159901344534603/L7qY4K9gAzOOeTBPce-Tm3vFWz9G9zKl3kp90nSSoUqeinO34m71B4cUqtOkrYngwWMg'; // Замените на ваш URL вебхука
+console.log("Канвасы и контексты инициализированы.");
 
-    // Формируем поля для отправки
-    const fields = [
-        { name: "Имя Фамилия", value: field1, inline: false },
-        { name: "Номер Паспорта", value: field2, inline: false },
-        { name: "Ксерокопия Паспорта", value: field3, inline: false },
-        { name: "Электронная почта (Discord)", value: field4, inline: false },
-        { name: "Номер телефона", value: field5, inline: false },
-        { name: "Сервер", value: field6, inline: false }
-    ];
+let scale = 3;
+let scale2 = 3;
 
-    // Получаем текущее время
-   
-    const TIME = new Date().toISOString();
+const image = new Image();
+const image2 = new Image();
+image.src = 'ДОГОВОР_21.jpg';
+image2.src = 'ДОГОВОР_2.jpg';
 
+console.log("Базовые изображения созданы, начата загрузка.");
 
-    // Формируем данные для отправки
-    const payload = {
-        username: "Секретарь партии",
-            avatar_url: "https://cdn.discordapp.com/attachments/1303450766236979252/1305860322619555840/statue-of-liberty.png?ex=673490b2&is=67333f32&hm=a340052df2c40f5522f36cbcf4f2bf8541b9f365edae51817ee37a0cd28819aa&",
-        content: "<@&1297958792461291580> <@&1297959292745547900>",
-        embeds: [{
-            
-            title: "Заявление на вступление в партию",
-            color: 0x00FF00, // Цвет в десятичном формате
-            fields: fields,
-            timestamp: TIME,
-            footer: {
-                text: "by Walter Heisenberg"
-            },
-            thumbnail: {
-                         url:"https://cdn.discordapp.com/attachments/1303450766236979252/1303454138801324134/undefined_-_Imgur_5.png?ex=67346183&is=67331003&hm=12d56d68b6a8994a5b067f0f51c6c916426dbda867e88a5feec008ec7e9c4670&"
-            },  
-            image: {
-                        url: "https://cdn.discordapp.com/attachments/1301258252427989133/1301266881419804762/55f758f4c4b08c0e.png?ex=67345578&is=673303f8&hm=b6313ab9ddcec547deb5e36dc63d7c168d9b9a4e7b2c3161a849852c5a394ad4&"
-            },
-            
-            
-        }]
-    };
+image.onload = () => {
+    console.log("Базовое изображение 1 загружено.");
+    drawBaseImage();
+};
+image2.onload = () => {
+    console.log("Базовое изображение 2 загружено.");
+    drawBaseImage();
+};
 
-    fetch(webhookURL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-    })
-    .then(response => {
-        if (response.ok) {
-           
-            window.open("Dis.html", "_blank");
-            document.getElementById('messageForm').reset(); // Очищаем поля ввода
-        } else {
-            alert('Ошибка при отправке сообщения.');
+let images = [
+    { img: null, x: 500, y: 1950, scale: 3, dragging: false },
+    { img: null, x: 1300, y: 2050, scale: 3, dragging: false }
+];
+
+console.log("Массив изображений инициализирован.");
+
+let dragOffsetX = 0;
+let dragOffsetY = 0;
+let draggedImage = null;
+
+// Функции для работы с датами
+function getCurrentDateMoscow() {
+    const date = new Date();
+    const moscowDate = new Date(date.toLocaleString("en-US", { timeZone: "Europe/Moscow" }));
+    return `${moscowDate.getDate().toString().padStart(2, '0')}.${(moscowDate.getMonth() + 1).toString().padStart(2, '0')}.${moscowDate.getFullYear()}`;
+}
+
+function getCurrentDate() {
+    const date = new Date();
+    const moscowDate = new Date(date.toLocaleString("en-US", { timeZone: "Europe/Moscow" }));
+    return `${(moscowDate.getDate() + 3).toString().padStart(2, '0')}.${(moscowDate.getMonth() + 1).toString().padStart(2, '0')}.${moscowDate.getFullYear()}`;
+}
+
+const currentDate = getCurrentDateMoscow();
+const currentDate3 = getCurrentDate();
+
+// Обновление масштаба
+function updateScale(event, target) {
+    const value = parseFloat(event.target.value);
+    if (target === 'scale1') {
+        scale = value;
+        images[0].scale = value;
+    } else {
+        scale2 = value;
+        images[1].scale = value;
+    }
+    drawBaseImage();
+}
+
+document.getElementById('scaleInput').addEventListener('input', (event) => updateScale(event, 'scale1'));
+document.getElementById('scaleInput2').addEventListener('input', (event) => updateScale(event, 'scale2'));
+
+// Обработка текстовых полей
+document.querySelectorAll('input[type="text"]').forEach(input => {
+    input.addEventListener('input', drawBaseImage);
+});
+
+// Загрузка изображений
+function loadImage(event, imageObj) {
+    const file = event.target.files[0];
+    if (file) {
+        console.log("Файл выбран:", file.name);
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            console.log("Файл прочитан успешно.");
+            const img = new Image();
+            img.onload = function () {
+                console.log("Изображение загружено в память.");
+                imageObj.img = img;
+                drawBaseImage();
+            };
+            img.onerror = function () {
+                console.error("Ошибка загрузки изображения:", img.src);
+            };
+            img.src = e.target.result;
+        };
+        reader.onerror = function (e) {
+            console.error("Ошибка чтения файла:", e.target.error);
+        };
+        reader.readAsDataURL(file);
+    } else {
+        console.log("Файл не выбран.");
+    }
+}
+
+document.getElementById('imageLoader').addEventListener('change', (event) => loadImage(event, images[0]));
+document.getElementById('imageLoader2').addEventListener('change', (event) => loadImage(event, images[1]));
+
+// Отрисовка базового изображения
+function drawBaseImage() {
+    console.log("Перерисовка канвасов.");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(image, 0, 0);
+    ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+    ctx2.drawImage(image2, 0, 0);
+    
+    // Текст на первом канвасе
+    ctx.font = 'bold 35px Courier New';
+    ctx.fillStyle = 'rgb(50, 50, 50)';
+    ctx.fillText(`${document.getElementById('textInput').value}, именуем(ый/ая) в дальнейшем "Доверитель", заключили`, 450, 703);
+    ctx.fillText(`${document.getElementById('textInput1').value}, действующего на основании`, 1200, 613);
+    ctx.fillText(currentDate3, 960, 2700);
+    ctx.font = 'bolder 60px Courier New';
+    ctx.fillText(currentDate, 900, 500);
+
+    // Текст на втором канвасе
+    ctx2.font = 'bolder 35px Courier New';
+    ctx2.fillStyle = 'rgb(50, 50, 50)';
+    ctx2.fillText(`${document.getElementById('textInput3').value}@dis.com`, 480, 1520);
+    ctx2.fillText(`${document.getElementById('textInput4').value}@dis.com`, 420, 1570);
+    ctx2.fillText(document.getElementById('textInput5').value, 1130, 770);
+
+    // Отрисовка изображений
+    images.forEach((imageObj, index) => {
+        if (imageObj.img) {
+            console.log(`Рисуем изображение ${index + 1} на координатах X=${imageObj.x}, Y=${imageObj.y}.`);
+            ctx2.drawImage(
+                imageObj.img, 
+                imageObj.x, 
+                imageObj.y, 
+                imageObj.img.width * imageObj.scale, 
+                imageObj.img.height * imageObj.scale
+            );
         }
-    })
-    .catch(error => {
-        console.error('Ошибка:', error);
-        alert('Ошибка при отправке сообщения.');
     });
-})
+
+    processInput();
+    processInput2();
+}
+
+// Обработка ввода текста
+function processInput() {
+    const words = document.getElementById("textInput").value.trim().split(" ");
+    if (words.length >= 2) {
+        ctx2.fillText(`${words[0].charAt(0)}.${words[1]}`, 970, 2047);
+    }
+}
+
+function processInput2() {
+    const words = document.getElementById("textInput1").value.trim().split(" ");
+    if (words.length >= 2) {
+        ctx2.fillText(`${words[0].charAt(0)}.${words[1]}`, 1780, 2180);
+    }
+}
+
+// Коэффициент масштабирования CSS (0.25)
+const CSS_SCALE_FACTOR = 0.25;
+
+// Логика перетаскивания изображений
+canvas2.addEventListener('mousedown', (event) => {
+    const rect = canvas2.getBoundingClientRect();
+    const mouseX = (event.clientX - rect.left) / CSS_SCALE_FACTOR;
+    const mouseY = (event.clientY - rect.top) / CSS_SCALE_FACTOR;
+
+    images.forEach((imageObj) => {
+        if (imageObj.img) {
+            const imgWidth = imageObj.img.width * imageObj.scale;
+            const imgHeight = imageObj.img.height * imageObj.scale;
+            
+            if (mouseX >= imageObj.x && mouseX <= imageObj.x + imgWidth &&
+                mouseY >= imageObj.y && mouseY <= imageObj.y + imgHeight) {
+                draggedImage = imageObj;
+                dragOffsetX = mouseX - imageObj.x;
+                dragOffsetY = mouseY - imageObj.y;
+            }
+        }
+    });
+});
+
+canvas2.addEventListener('mousemove', (event) => {
+    if (draggedImage) {
+        const rect = canvas2.getBoundingClientRect();
+        const mouseX = (event.clientX - rect.left) / CSS_SCALE_FACTOR;
+        const mouseY = (event.clientY - rect.top) / CSS_SCALE_FACTOR;
+
+        draggedImage.x = mouseX - dragOffsetX;
+        draggedImage.y = mouseY - dragOffsetY;
+        drawBaseImage();
+    }
+});
+
+// Обработчики для отпускания изображения
+window.addEventListener('mouseup', () => {
+    draggedImage = null;
+});
+
+canvas2.addEventListener('mouseleave', () => {
+    draggedImage = null;
+});
+
+// Кнопка скачивания
+document.getElementById('downloadButton').addEventListener('click', () => {
+    console.log("Кнопка 'Скачать' нажата.");
+    const link = document.createElement('a');
+    link.download = 'image_with_text.jpeg';
+    link.href = canvas.toDataURL();
+    link.click();
+
+    const link2 = document.createElement('a');
+    link2.download = 'image_with_text2.jpeg';
+    link2.href = canvas2.toDataURL();
+    link2.click();
+});
+
+
+
+
+
+
+
