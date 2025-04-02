@@ -78,7 +78,7 @@ event.preventDefault(); // Предотвращаем перезагрузку �
        const field11 = document.getElementById('field11').value;
        const field12 = document.getElementById('field12').value;
        const field13 = document.getElementById('field13').value;
-       const field14 = document.getElementById('field14').value;
+
 
        const webhookURL = 'https://discord.com/api/webhooks/1330635021458997310/EcbATN8IkNrW75xArNbhoo09eG39n9Q4M7Kh8FrzsFoHleyg3AmuXwhts5SVNnqJFkMB'; // Замените на ваш URL вебхука
 
@@ -97,7 +97,6 @@ event.preventDefault(); // Предотвращаем перезагрузку �
         { name: "Была ли сделана запись о судимости?", value: field11, inline: false },
         { name: "Краткое описание ситуации", value: field12, inline: false },
         { name: "Скриншот оплаты услуг", value: field13, inline: false },
-        { name: "Скриншот оплаты пошлины", value: field14, inline: false }
 
         ];
 
@@ -111,7 +110,7 @@ event.preventDefault(); // Предотвращаем перезагрузку �
                 username: "Секретарь партии",
                 avatar_url: "https://cdn.discordapp.com/attachments/1302639052008456258/1330636354131988501/statue-of-liberty.png?ex=678eb32c&is=678d61ac&hm=e33899f9176b7651f8af09a57d4268f5230d515b371daad2d3329ff9223cd483&",
                              
-                content: "",
+                content: "<@&1321467897834639411>",
                 embeds: [{
                     
                     title: "Исковое заявление",
