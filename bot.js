@@ -88,7 +88,7 @@ document.getElementById('messageForm').addEventListener('submit', function (even
                 text: "by Walter Heisenberg"
             },
             thumbnail: {
-                url: "https://cdn.discordapp.com/attachments/1303450766236979252/1303454138801324134/undefined_-_Imgur_5.png"
+                url: "https://cdn.discordapp.com/attachments/1302639052008456258/1359285120812585014/48da40fdcc74cdfd.png?ex=67f6ec6b&is=67f59aeb&hm=3c4e8152ca0d0b2e50c0ac77c8cd12093ec0501f1e73019356d138bceed67de7&format=webp&quality=lossless"
             },
             image: {
                 url: "https://cdn.discordapp.com/attachments/1301258252427989133/1301266881419804762/55f758f4c4b08c0e.png"
