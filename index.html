@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Помощь в написании исковых заявлений</title>
+    <link rel="icon" type="image/x-icon" href="statue-of-liberty.ico">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <script type="text/javascript" src="bot.js" defer></script>
+    <style>
+        .hidden { display: none; }
+        .visible { display: block; }
+        .button:disabled {
+            background-color: #888;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="messageForm">
+            <div id="element1" class="visible">
+                <h3>Ваши данные</h3>    
+                <input type="text" id="field1" class="TEXT" placeholder="Имя Фамилия"> 
+                <input type="text" id="field2" class="TEXT" placeholder="Номер Паспорта">
+                <input type="text" id="field3" class="TEXT" placeholder="Ксерокопия Паспорта">
+                <input type="text" id="field4" class="TEXT" placeholder="Электронная почта (Discord)">
+                <input type="text" id="field5" class="TEXT" placeholder="Номер телефона">
+                <button id="But1" class="button" type="button">Далее</button>
+            </div> 
+            <div id="element2" class="hidden">
+                <h3>Данные ответчика</h3>
+                <input type="text" id="field6" class="TEXT" placeholder="Имя Фамилия"> 
+                <input type="text" id="field7" class="TEXT" placeholder="Номер Паспорта">
+                <input type="text" id="field8" class="TEXT" placeholder="Организация">
+                <button id="But2" class="button" type="button">Далее</button>
+            </div>
+            <div id="element3" class="hidden">
+                <h3>Материалы дела</h3>
+                <input type="text" id="field9" class="TEXT" placeholder="Инкриминированые статьи">
+                <input type="text" id="field10" class="TEXT" placeholder="Видеофиксациия">
+                <select id="field11" class="TEXT" style="width: 410px;">
+                    <option selected hidden>Была ли сделана запись о судимости?</option>
+                    <option>Да</option>
+                    <option>Нет</option>
+                </select>
+                <textarea id="field12" class="TEXT" placeholder="Краткое описание ситуации"></textarea>
+                <button id="But3" class="button" type="button">Далее</button>
+            </div>
+            <div id="element4" class="hidden">
+                <h3 id="b1">Стоимость услуг составляет 100.000$, оплачивать на счет - 73879.</h5>
+                <input type="text" id="field13" class="TEXT" placeholder="Скриншот оплаты услуг"> 
+                <button type="submit" class="button">Отправить</button>
+            </div>
+        </form>    
+    </div>
+</body>
+</html>
