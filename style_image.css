@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1f1f1f;
+
+    justify-content: center;
+    align-items: center;
+    background-image: url('Без имени-1.png') ;
+    background-size: 100vw 115vh ;   
+}
+
+*{
+    margin: 0 0 0 0;
+}
+
+
+#canvas {
+    margin-top: 30vh;
+    position: absolute;
+    margin-left: 130vw;
+    border: 1px solid #000;
+    zoom: 25%;
+    z-index: 2;
+    border-radius: 30px;
+}
+
+#canvas2 {
+    margin-top: 30vh;
+    position: absolute;
+    margin-left: 265vw;
+    border: 1px solid #000;
+    zoom: 25%;
+    z-index: 2;
+    border-radius: 30px;
+}
+
+.TEXT {
+    
+    width: 20vw ;
+    height: 2vw;
+    align-items: center;
+    margin-left: 3vw;
+    margin-top: 20px;
+    border: 3px  #ff0000;
+    border-radius: 10px;
+    align-items: center;
+    color: #ffffff;
+    background-color: #222222;
+    padding-left: 10px;
+    resize: none;   
+}
+
+.Container{
+    margin-right: 0;
+    position: fixed;
+    background-color: #181818;
+    width: 30vw;
+    height: 100vh;
+    z-index: 5;
+}
+
+button{
+    margin-top: 5vw;
+    font-size: 15px;
+    align-items: center;
+    margin-left: 3vw;
+    width: 12vw;
+    height: 3vw;
+    background-color: #ffb342;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bolder;
+
+
+}
+
+
+#imageLoader{
+
+    margin-top: 3vw;
+    font-size: 15px;
+    align-items: center;
+    margin-left: 5vw;
+    width: 12vw;
+    height: 3vw;
+    background-color: #b9b9b9;
+    color: rgba(255, 255, 255, 0);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+#btn {
+    position: absolute;
+    padding: 10px;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 3vw;
+    font-size: 14px;
+    border: 0px solid #ffffff;
+    background: #ff0000;
+    background-color: #222222;
+    color: #e9e9e9;
+    width: 280px;
+    height: 50px;
+    border-radius: 10px;
+    text-shadow: 0px 0px 1px #ffffff;
+    font-weight: bolder;
+}
+
+#btn2 {
+    margin-top: 10px;
+    position: absolute;
+    padding: 10px;
+    align-items: center;
+    margin-left: 3vw;
+    font-size: 14px;
+    border: 0px solid #ffffff;
+    background: #ff0000;
+    background-color: #222222;
+    color: #e9e9e9;
+    width: 280px;
+    height: 50px;
+    border-radius: 10px;
+    text-shadow: 0px 0px 1px #ffffff;
+    font-weight: bolder;
+}
+
+#scaleInput{
+    margin-top: 20px; 
+}
+
+#scaleInput2{
+    margin-top: 20px; 
+}
+
+#textInput{
+    margin-top: 10vh;
+}
+
+#btn, #btn2 {
+    transition: background-color 0.3s ease;
+}
+
+#btn:hover, #btn2:hover {
+    background-color: #ff4500;
+}
+
+button:hover {
+    background-color: #ff8c00;
+}
+
+#scaleInput, #scaleInput2 {
+    cursor: pointer;
+}
